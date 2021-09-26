@@ -7,3 +7,4 @@ Tick the sample.txt checkbox for sample chat analysis.
 OR
 Upload your whatsapp chat exported file(.txt) for its analysis.
 
+![name-of-you-image](https://your-copied-image-address)
