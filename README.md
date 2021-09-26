@@ -7,4 +7,4 @@ Tick the sample.txt checkbox for sample chat analysis.
 OR
 Upload your whatsapp chat exported file(.txt) for its analysis.
 
-![name-of-you-image](https://your-copied-image-address)
+![Screenshot](https://https://github.com/tptarun/WhatsApp-chat-analystic/blob/master/screencapture-whatsapp-analysis-chat-herokuapp-2021-09-26-18_44_50.png)
