@@ -9,6 +9,14 @@ import emoji
 f = open('stop_hinglish.txt', 'r')
 stop_words = f.read()
 
+def unique_user(df):
+    user_list = df['user'].unique().tolist()
+    user_list.remove('group_notification')
+    user_list.sort()
+    user_list.insert(0, "Overall")
+    user_list = [x for x in user_list if not x.startswith('+')]
+    return  user_list
+
 def fetch_stats(selected_user, df):
     if selected_user != "Overall":
         df =df[df['user'] == selected_user]

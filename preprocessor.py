@@ -1,20 +1,26 @@
 import re
 import pandas as pd
+from datetime import datetime
 
 def preprocess(data):
-    pattern = '\d{1,2}\/\d{1,2}\/\d{1,2},\s\d{1,2}\:\d{1,2}\s*[ap]m\s-\s'
 
+    pattern = '\d{1,2}\/\d{1,2}\/\d{2,4},\s\d{1,2}\:\d{1,2}\s*[ap]m\s-\s'
     message = re.split(pattern, data)[1:]
+    if not message:
+        message = re.split(pattern, data)
+
     dates = re.findall(pattern, data)
 
     df = pd.DataFrame({'user_message': message, 'message_date': dates})
     # convert message_date type
-    df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%y, %I:%M %p - ')
+    if data[8:9] == ",":
+        df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%y, %I:%M %p - ')
+    else:
+        df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%Y, %I:%M %p - ')
 
     df.rename(columns={'message_date': 'date'}, inplace=True)
 
     #separate users and message
-
     users = []
     messages = []
 
