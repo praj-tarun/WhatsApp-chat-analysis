@@ -1,4 +1,4 @@
-# WhatsApp-chat-analyzer
+# WhatsApp-Chat-Analyzer
 It is WebApp which shows Chat Analysis on whatsapp chat through its exported txt file.
 
 Link- https://whatsapp-analysis-chat.herokuapp.com
